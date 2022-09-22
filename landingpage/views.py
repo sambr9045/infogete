@@ -1,4 +1,5 @@
 import ipaddress
+from json import load
 from django.shortcuts import render, redirect
 from landingpage.forms import UserForm, LoginForm, validateionCodeForm
 from django.http import HttpResponseRedirect, HttpResponse
@@ -11,8 +12,11 @@ from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from datetime import timedelta, datetime
 import socket
-import random
+import random, os
 from requests import get
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 # Create your views here.
@@ -121,6 +125,9 @@ def sign_up(request):
     if request.method == "POST":
         form = UserForm(request.POST)
 
+        # plan = request.GET.get("plan")
+        # print(plan)
+
         if form.is_valid():
             user = form.save(commit=False)
             user.username = form.cleaned_data["username"]
@@ -152,6 +159,7 @@ def sign_up(request):
                 data = [user.username, randomNumber, user.email]
                 sendMail(data)
                 # print(token.tok)
+
                 return redirect("/confirm-email/" + str(token.token))
 
                 # return render(request, "confirmEmail.html", {"email": email})
@@ -169,6 +177,7 @@ def confirmEmail(request, uuid4):
         user = user.first()
 
         if request.method == "POST":
+            plan = request.GET.get("plan")
             if "resend" in request.POST:
                 # generate new user code and send it back user email
                 # update user data with newly generated code
@@ -283,7 +292,7 @@ def sendMail(data: list):
     send_mail(
         subject,
         message,
-        "no-reply@buycoingh.com",
+        os.getenv("SECURITY_EMAIL_SENDER"),
         [data[2]],
         fail_silently=False,
     )

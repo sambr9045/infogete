@@ -29,7 +29,7 @@ SECRET_KEY = "django-insecure-bssol-k$stkzx+qmpo)@$nf9t_9ls&#$x&73o_#8ly-q1*2l%)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["2f5d-185-128-9-124.ngrok.io", "127.0.0.1"]
 
 
 # Application definition
@@ -143,8 +143,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 EMAIL_BACKEND = "mailer.backend.DbBackend"
 
 
-SECURITY_EMAIL_SENDER = "no-reply@buycoingh.com"
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+SECURITY_EMAIL_SENDER = os.getenv("DEFAULT_FROM_EMAIL")
+# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = os.getenv("EMAIL_HOST")
 EMAIL_HOST_USER = os.getenv("DEFAULT_FROM_EMAIL")
 EMAIL_USE_TLS = True

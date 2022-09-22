@@ -7,6 +7,8 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="infogete suscribe to latest tutorials" />
+  <meta name="keywords" content="Infogete suscribe to latest carding , loading , logs, cashout tutorials" />
 
   {% block header %}
   {% endblock  %}
@@ -15,19 +17,7 @@
   <!-- plugins:css -->
   <link rel="stylesheet" href="{% static 'dashboard/vendors/feather/feather.css' %}">
   <link rel="stylesheet" href="{% static 'dashboard/vendors/mdi/css/materialdesignicons.min.css' %}">
-  {% comment %}
-  <link rel="stylesheet" href="{% static 'dashboard/vendors/ti-icons/css/themify-icons.css' %}">
-  <link rel="stylesheet" href="{% static 'dashboard/vendors/typicons/typicons.css' %}">
-  <link rel="stylesheet" href="{% static 'dashboard/vendors/simple-line-icons/css/simple-line-icons.css' %}">
-  <link rel="stylesheet" href="{% static 'dashboard/vendors/css/vendor.bundle.base.css' %}"> {% endcomment %}
-  <!-- endinject -->
-  <!-- Plugin css for this page -->
-  {% comment %}
-  <link rel="stylesheet" href="{% static 'dashboard/vendors/datatables.net-bs4/dataTables.bootstrap4.css' %}">
-  {% endcomment %}
-  {% comment %}
-  <link rel="stylesheet" href="{% static 'dashboard/js/select.dataTables.min.css' %}"> {% endcomment %}
-  <!-- End plugin css for this page -->
+
   <!-- inject:css -->
   <link rel="stylesheet" href="{% static 'dashboard/css/vertical-layout-light/style.css' %}">
   <!-- endinject -->
@@ -70,14 +60,6 @@
 
           {% endblock  %}
 
-          {% comment %} <li class="nav-item d-none d-lg-block">
-            <div id="datepicker-popup" class="input-group date datepicker navbar-date-picker">
-              <span class="input-group-addon input-group-prepend border-right">
-                <span class="icon-calendar input-group-text calendar-icon"></span>
-              </span>
-              <input type="text" class="form-control">
-            </div>
-          </li> {% endcomment %}
           <li class="nav-item">
             <form class="search-form" method="get" action="{% url 'home' %}">
               <i class="icon-search"></i>
@@ -119,48 +101,7 @@
 
             </div>
           </li>
-          <!-- <li class="nav-item dropdown">
-            <a class="nav-link count-indicator" id="countDropdown" href="#" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              <i class="icon-bell" ></i>
-              <span class="count"></span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0"
-              aria-labelledby="countDropdown">
-              <a class="dropdown-item py-3">
-                <p class="mb-0 font-weight-medium float-left">You have 7 unread mails </p>
-                <span class="badge badge-pill badge-primary float-right">View all</span>
-              </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <img src="images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
-                </div>
-                <div class="preview-item-content flex-grow py-2">
-                  <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
-                  <p class="fw-light small-text mb-0"> The meeting is cancelled </p>
-                </div>
-              </a>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <img src="images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
-                </div>
-                <div class="preview-item-content flex-grow py-2">
-                  <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
-                  <p class="fw-light small-text mb-0"> The meeting is cancelled </p>
-                </div>
-              </a>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <img src="images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
-                </div>
-                <div class="preview-item-content flex-grow py-2">
-                  <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
-                  <p class="fw-light small-text mb-0"> The meeting is cancelled </p>
-                </div>
-              </a>
-            </div>
-          </li> -->
+        
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="
@@ -176,9 +117,6 @@
               <a class="dropdown-item" href="/dashboard/profile"><i
                   class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My
                 Profile </a>
-
-              {% comment %} <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i>
-                FAQ</a> {% endcomment %}
               <a class="dropdown-item" href="/dashboard/logout"><i
                   class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
             </div>
@@ -228,8 +166,7 @@
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link" href="/dashboard/contact-us">Contact Us</a></li>
-                {% comment %} <li class="nav-item"><a class="nav-link" href="/dashboard/suggestion">Suggestion</a></li>
-                {% endcomment %}
+  
                 <li class="nav-item"><a class="nav-link" href="/dashboard/tickets">Tikect</a></li>
               </ul>
             </div>
@@ -270,28 +207,13 @@
     integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
 
   <script src="{% static 'dashboard/vendors/js/vendor.bundle.base.js' %}"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page -->
-  {% comment %} <script src="{% static 'dashboard/vendors/chart.js/Chart.min.js' %}"></script> {% endcomment %}
-  {% comment %} <script src="{% static 'dashboard/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js' %}">
-  </script> {% endcomment %}
-  {% comment %} <script src="{% static 'dashboard/vendors/progressbar.js/progressbar.min.js'%}"></script>
-  {% endcomment %}
-
-  <!-- End plugin js for this page -->
-  <!-- inject:js -->
   <script src="{%  static 'dashboard/js/off-canvas.js' %}"></script>
-  {% comment %} <script src="{% static 'dashboard/js/hoverable-collapse.js' %}"></script> {% endcomment %}
+
   <script src="{% static 'dashboard/js/template.js' %}"></script>
-  {% comment %} <script src="{% static 'dashboard/js/settings.js' %}"></script> {% endcomment %}
-  {% comment %} <script src="{% static 'dashboard/js/todolist.js' %}"></script> {% endcomment %}
-  <!-- endinject -->
-  <!-- Custom js for this page-->
+
   <script src="{% static 'dashboard/js/dashboard.js' %}"></script>
   <script src="{% static 'dashboard/js/notifications.js' %}"></script>
 
-  {% comment %} <script src="{% static 'dashboard/js/Chart.roundedBarCharts.js' %}"></script> {% endcomment %}
-  <!-- End custom js for this page-->
 
   {% block footer %}
 
