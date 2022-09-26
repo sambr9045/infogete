@@ -26,8 +26,16 @@
 .customArticle h2 h3 h4 h5 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: gray !important;
+    font-size: 19px !important;
 }
 
+.customArticle h1 {
+    font-size: 25px !important;
+}
+
+.customArticle ul li {
+    font-size: 18px;
+}
 
 .customArticle p {
     font-size: 18px;

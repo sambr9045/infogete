@@ -90,7 +90,7 @@ def cpanel(request):
 def uploadArticle(request):
     # random number generator
     def randomNumber():
-        return random(0, 5000)
+        return random.randint(0, 5000)
 
     if request.POST:
         if "submit_article" in request.POST:

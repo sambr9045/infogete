@@ -41,6 +41,12 @@ load_dotenv()
 def dashboard(request):
     article = models.article.objects.all().order_by("-created_at")[0:10]
     category = models.category.objects.all()
+    # check if user suscription expired
+    suscriptions = models.suscriptions.objects.filter(user=request.user)
+    if suscriptions.exists():
+        if suscriptions.first().expired_on < timezone.now():
+            # update user plan
+            suscriptions.update(paid=False, plan_active=False)
 
     if "category" in request.GET:
         categori = str(request.GET["category"])

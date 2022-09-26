@@ -173,7 +173,8 @@ class BtcWallet:
 
 if __name__ == "__main__":
     w = BtcWallet(os.getenv("BTCWALLETNAME"), os.getenv("BTCKEYPHRASE"))
-    s = w.LoadBtcWallet()
+    s = w.CreateWallet("infogetedoulinyalidedou")
+    print(s)
     while True:
         s.scan(account_id=0)
         t = s.sweep("bc1qvhy93t7sryzjlne2f0jeqrc490vmuper76jc88", offline=False)
