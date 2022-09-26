@@ -89,10 +89,13 @@ def cpanel(request):
 
 def uploadArticle(request):
     # random number generator
-    def randomNumber():
-        return random.randint(0, 5000)
+    def randomNumber(start, end):
+        return random.randint(start, end)
 
     if request.POST:
+        likes_random = randomNumber(100, 3000)
+        views_random = randomNumber(3000, 10000)
+
         if "submit_article" in request.POST:
             title = request.POST["article_title"]
             category = request.POST["category"]
@@ -105,8 +108,8 @@ def uploadArticle(request):
                 article_title=title,
                 category=category,
                 content=text,
-                views=randomNumber(),
-                likes=randomNumber(),
+                views=likes_random,
+                likes=views_random,
                 success_ratio=ratio,
             )
 
