@@ -38,7 +38,7 @@
 
 
   <div class="row mb-4">
-    <div class="col-lg-10">
+    <div class="col-lg-12">
 
       <div class="alert alert-success saved_article_alert fade shadow" role="alert"
         style="position: fixed; right:0; top:20; z-index:399; margin-right:20px">
@@ -46,30 +46,36 @@
 
       </div>
 
-      {% for i in article %}
+     <div class="row">
+        {% for i in article %}
 
-      <div class="card text-center rounded-0 mb-4">
-        <div class="card-header ">
-          <span>This article has <b>{{i.success_ratio}}</b> success ratio</span>
-        </div>
-        <div class="card-body">
-          <h4 class="card-title">{{i.article_title}}</h4>
-          <p class="card-text">This article has been tested and verified by our team to make sure it works </p>
+        <div class="col-lg-4">
 
-          <a href="#" article_id="{{i.article_id}}" class="readLater btn btn-secondary"> <i
-              class=" mdi mdi-content-save " style="vertical-align:middle;"></i> Read later</a>
-          <a href="{% url 'viewarticle' i.article_id i.article_title %}" class="btn btn-primary "><i class="
-            mdi mdi-book-open " style="vertical-align:middle;"></i> Read</a>
-        </div>
-        <div class="card-footer text-muted">
-          {{i.created_at|naturaltime}} <span class="p-2"><i class=" mdi mdi-eye"
-              style="vertical-align: middle;"></i>&nbsp;<small>{{i.views|intword}}</small></span>
-          <span class="p-2"><i class="
-            mdi mdi-heart-outline " style="vertical-align: middle;"></i>&nbsp;<small>{{i.likes|intword}}</small></span>
+        <div class="card text-center rounded-0 m-2">
+          <div class="card-header ">
+            <small style="font-size:13px">This article has <b>{{i.success_ratio}}</b> success ratio</small style="font-size:13px">
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">{{i.article_title}}</h4>
+            {% comment %} <p class="card-text">This article has been tested and verified by our team to make sure it works </p> {% endcomment %}
+  
+            <a href="#" article_id="{{i.article_id}}" class="readLater btn btn-sm btn-secondary"> <i
+                class=" mdi mdi-content-save " style="vertical-align:middle;"></i> Read later</a>
+            <a href="{% url 'viewarticle' i.article_id i.article_title %}" class="btn btn-sm btn-primary "><i class="
+              mdi mdi-book-open " style="vertical-align:middle;"></i> Read</a>
+          </div>
+          <div class="card-footer text-muted " style="font-size:13px;">
+           <small> {{i.created_at|naturaltime}} </small> <span class="p-2"><i class=" mdi mdi-eye"
+                style="vertical-align: middle;"></i>&nbsp;<small>{{i.views|intword}}</small></span>
+            <span class="p-2"><i class="
+              mdi mdi-heart-outline " style="vertical-align: middle;"></i>&nbsp;<small>{{i.likes|intword}}</small></span>
+          </div>
         </div>
       </div>
-      {% endfor %}
 
+        {% endfor %}
+  
+     </div>
 
 
 

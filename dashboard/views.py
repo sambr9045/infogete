@@ -39,7 +39,7 @@ load_dotenv()
 # but tight
 @login_required(login_url="/login")
 def dashboard(request):
-    article = models.article.objects.all().order_by("-created_at")[0:10]
+    article = models.article.objects.all().order_by("-created_at")
     category = models.category.objects.all()
     # check if user suscription expired
     suscriptions = models.suscriptions.objects.filter(user=request.user)
@@ -57,7 +57,7 @@ def dashboard(request):
         search = str(request.GET["searche"])
         article = models.article.objects.filter(article_title__contains=search)
 
-    paginator = Paginator(article, 10)
+    paginator = Paginator(article, 20)
     page = request.GET.get("page")
     if page == None:
         pages = "0"

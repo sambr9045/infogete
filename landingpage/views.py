@@ -301,8 +301,9 @@ def sendMail(data: list):
 
 def MinuteAgo(updated_time, minutes):
     # timestamp now + 40 minutes
-    timeSus = datetime.now(timezone.utc) + timedelta(minutes=-minutes)
+    # timeSus = datetime.now(timezone.utc) + timedelta(minutes=-minutes)
+    time_sus = timezone.now() - timedelta(minutes=minutes)
     # convert time into array
-    remaining_time = str(updated_time - timeSus).split(":")
+    remaining_time = str(updated_time - time_sus).split(":")
     if int(remaining_time[1]) < int(minutes):
         return int(remaining_time[1])

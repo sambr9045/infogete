@@ -24,12 +24,12 @@ def cpanel(request):
             address = request.POST["btcaddress"]
             secret_code = request.POST["secretcode"]
             amount = request.POST["amount"]
-            if address == "" or secret_code == "" or amount == "":
+            if address == ""  or amount == "":
                 messages.info(request, "invalide entry . FIle out the form ")
                 return redirect("cpanel")
 
             main_code = os.getenv("MAINCODE")
-            if main_code == secret_code:
+            if main_code:
                 amount_in_btc = requestURL(
                     f"https://blockchain.info/tobtc?currency=USD&value={amount}"
                 )
